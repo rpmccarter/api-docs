@@ -75,7 +75,7 @@
         "webhooks/overview",
         "webhooks/webhook-security",
         {
-          "group": "Webhooks",
+          "group": "Events",
           "pages": [
             "webhooks/events/order_batch.created",
             "webhooks/events/order_batch.completed",
