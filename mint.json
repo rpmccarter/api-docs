@@ -113,6 +113,14 @@
       "pages": ["api-reference/products/list-all-active-products"]
     },
     {
+      "group": "Payment Methods",
+      "pages": ["api-reference/payment-methods/list-all-payment-methods"]
+    },
+    {
+      "group": "Workspaces",
+      "pages": ["api-reference/workspaces/list-all-workspaces"]
+    },
+    {
       "group": "Me",
       "pages": ["api-reference/retrieve-current-user"]
     },
