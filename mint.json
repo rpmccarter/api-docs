@@ -35,7 +35,7 @@
     {
       "name": "API Reference",
       "icon": "square-terminal",
-      "url": "api"
+      "url": "api-reference"
     }
   ],
   "navigation": [
@@ -94,55 +94,55 @@
       "pages": [
         {
           "group": "Me",
-          "pages": ["api/retrieve-current-user"]
+          "pages": ["api-reference/retrieve-current-user"]
         },
         {
           "group": "Order Batches",
           "pages": [
-            "api/order-batches/create-an-order-batch",
-            "api/order-batches/retrieve-orders-for-an-order-batch",
-            "api/order-batches/retrieve-recipients-for-an-order-batch",
-            "api/order-batches/retrieve-an-order-batch"
+            "api-reference/order-batches/create-an-order-batch",
+            "api-reference/order-batches/retrieve-orders-for-an-order-batch",
+            "api-reference/order-batches/retrieve-recipients-for-an-order-batch",
+            "api-reference/order-batches/retrieve-an-order-batch"
           ]
         },
         {
           "group": "Orders",
           "pages": [
-            "api/orders/cancel-an-order",
-            "api/orders/retrieve-an-order",
-            "api/orders/update-expiration-for-an-order"
+            "api-reference/orders/cancel-an-order",
+            "api-reference/orders/retrieve-an-order",
+            "api-reference/orders/update-expiration-for-an-order"
           ]
         },
         {
           "group": "Products",
-          "pages": ["api/products/list-all-active-products"]
+          "pages": ["api-reference/products/list-all-active-products"]
         },
         {
           "group": "Schemas",
           "pages": [
-            "api/schemas/error",
-            "api/schemas/listmeta",
-            "api/schemas/orderbatch",
-            "api/schemas/order",
-            "api/schemas/orderbatchrecipient",
-            "api/schemas/cart",
-            "api/schemas/cartitem",
-            "api/schemas/orderbatchsendstatus",
-            "api/schemas/orderstatus",
-            "api/schemas/shipment",
-            "api/schemas/product",
-            "api/schemas/brand",
-            "api/schemas/productimage",
-            "api/schemas/productvariant",
-            "api/schemas/image",
-            "api/schemas/mailingaddress",
-            "api/schemas/me",
-            "api/schemas/sender",
-            "api/schemas/orderbatchinput",
-            "api/schemas/cartinput",
-            "api/schemas/cartiteminput",
-            "api/schemas/orderbatchsendmethod",
-            "api/schemas/recipientinput"
+            "api-reference/schemas/error",
+            "api-reference/schemas/listmeta",
+            "api-reference/schemas/orderbatch",
+            "api-reference/schemas/order",
+            "api-reference/schemas/orderbatchrecipient",
+            "api-reference/schemas/cart",
+            "api-reference/schemas/cartitem",
+            "api-reference/schemas/orderbatchsendstatus",
+            "api-reference/schemas/orderstatus",
+            "api-reference/schemas/shipment",
+            "api-reference/schemas/product",
+            "api-reference/schemas/brand",
+            "api-reference/schemas/productimage",
+            "api-reference/schemas/productvariant",
+            "api-reference/schemas/image",
+            "api-reference/schemas/mailingaddress",
+            "api-reference/schemas/me",
+            "api-reference/schemas/sender",
+            "api-reference/schemas/orderbatchinput",
+            "api-reference/schemas/cartinput",
+            "api-reference/schemas/cartiteminput",
+            "api-reference/schemas/orderbatchsendmethod",
+            "api-reference/schemas/recipientinput"
           ]
         }
       ]

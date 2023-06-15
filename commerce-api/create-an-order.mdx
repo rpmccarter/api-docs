@@ -13,7 +13,7 @@ When you create an order batch, you provide a list of recipients. Each recipient
 
 If you're sending a single gift at a time, you'll also be creating an order batch – just with one recipient. Think of it as sending an email: whether you're sending an email to one recipient or multiple, you're still composing the same email.
 
-The endpoint to create a gift batch is **[POST /v1/order_batches](/api/order-batches/create-an-order-batch)**:
+The endpoint to create a gift batch is **[POST /v1/order_batches](/api-reference/order-batches/create-an-order-batch)**:
 
 ```
 POST https://api.sandbox.ongoody.com/v1/order_batches
@@ -169,8 +169,8 @@ The response looks like:
 ```
 
 - **If you send an order batch with 10 or fewer recipients**, orders are processed right away, and you'll see that that `send_status` is `complete` and you'll receive the list of orders back in the `orders_preview` object.
-- **If you send an order batch with more than 10 recipients**, creating orders happens asynchronously in the background, and you'll see that `send_status` is `pending`. You can hit the [`/order_batches/:id`](/api/order-batches/retrieve-an-order-batch) endpoint to check the `send_status` for `complete`, or listen for the `order_batch.completed` webhook.
-  - The `orders_preview` endpoint only contains the first 10 orders. If you have more orders, you can paginate through all the orders using the [`/order_batches/:id/orders`](/api/order-batches/retrieve-orders-for-an-order-batch) endpoint.
+- **If you send an order batch with more than 10 recipients**, creating orders happens asynchronously in the background, and you'll see that `send_status` is `pending`. You can hit the [`/order_batches/:id`](/api-reference/order-batches/retrieve-an-order-batch) endpoint to check the `send_status` for `complete`, or listen for the `order_batch.completed` webhook.
+  - The `orders_preview` endpoint only contains the first 10 orders. If you have more orders, you can paginate through all the orders using the [`/order_batches/:id/orders`](/api-reference/order-batches/retrieve-orders-for-an-order-batch) endpoint.
 - **If you schedule an order batch for the future** using the `scheduled_send_on` parameter, the `send_status` will be `pending`, and `orders_preview` will be empty, until the scheduled send time, at which point the orders are created. Similarly to above, you can listen for the `order_batch.completed` webhook.
 
 You can check the `send_status` field to determine if your order batch is being asynchronously processed or is scheduled for the future (`send_status == pending`) or orders are ready (`send_status == complete`).
@@ -230,7 +230,7 @@ In the order object, there are a few fields to point out:
 
 Congratulations – you've sent a gift!
 
-For more information on the order batch send endpoint, [visit the doc](/api/~1v1~1order_batches).
+For more information on the order batch send endpoint, [visit the doc](/api-reference/~1v1~1order_batches).
 
 ## Next steps
 
