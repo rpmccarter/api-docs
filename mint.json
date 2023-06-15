@@ -1,65 +1,166 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "Goody",
   "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
+    "light": "/logo.png",
+    "dark": "/logo.png"
+  },
+  "api": {
+    "baseUrl": "https://api.ongoody.com",
+    "auth": {
+      "method": "bearer"
+    }
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#9159D6",
+    "light": "#B584F1",
+    "dark": "#9159D6",
+    "anchors": {
+      "from": "#ac72ff",
+      "to": "#7f67ff"
+    }
+  },
+  "topbarCtaButton": {
+    "name": "Send a Gift",
+    "url": "https://www.ongoody.com/send"
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "Sign in",
+      "url": "https://www.ongoody.com/"
     }
   ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
-  },
   "anchors": [
     {
       "name": "API Reference",
-      "icon": "rectangle-terminal",
+      "icon": "square-terminal",
       "url": "api-reference"
     },
     {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
+      "name": "Goody for Business",
+      "icon": "briefcase",
+      "url": "https://www.ongoody.com/business"
     },
     {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://www.ongoody.com/blog"
     }
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Introduction",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "introduction/overview",
+        "introduction/order-lifecycle",
+        "introduction/send-methods"
+      ]
+    },
+    {
+      "group": "Automation API",
+      "pages": [
+        "automation-api/overview",
+        "automation-api/authentication",
+        "automation-api/access-the-catalog",
+        "automation-api/create-an-order",
+        "automation-api/retrieve-order-status",
+        "automation-api/webhooks"
+      ]
+    },
+    {
+      "group": "Commerce API",
+      "pages": [
+        "commerce-api/overview",
+        "commerce-api/authentication",
+        "commerce-api/access-the-catalog",
+        "commerce-api/create-an-order",
+        "commerce-api/retrieve-order-status",
+        "commerce-api/webhooks"
+      ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": [
+        "webhooks/overview",
+        "webhooks/webhook-security",
+        {
+          "group": "Webhooks",
+          "pages": [
+            "webhooks/webhooks-types/order_batch.created",
+            "webhooks/webhooks-types/order_batch.completed",
+            "webhooks/webhooks-types/order.created",
+            "webhooks/webhooks-types/order.gift_opened",
+            "webhooks/webhooks-types/order.gift_accepted",
+            "webhooks/webhooks-types/order.thank_you_note_added",
+            "webhooks/webhooks-types/order.shipped",
+            "webhooks/webhooks-types/order.delivered"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        {
+          "group": "Me",
+          "pages": ["api-reference/retrieve-current-user"]
+        },
+        {
+          "group": "Order Batches",
+          "pages": [
+            "api-reference/order-batches/create-an-order-batch",
+            "api-reference/order-batches/retrieve-orders-for-an-order-batch",
+            "api-reference/order-batches/retrieve-recipients-for-an-order-batch",
+            "api-reference/order-batches/retrieve-an-order-batch"
+          ]
+        },
+        {
+          "group": "Orders",
+          "pages": [
+            "api-reference/orders/cancel-an-order",
+            "api-reference/orders/retrieve-an-order",
+            "api-reference/orders/update-expiration-for-an-order"
+          ]
+        },
+        {
+          "group": "Products",
+          "pages": ["api-reference/products/list-all-active-products"]
+        },
+        {
+          "group": "Schemas",
+          "pages": [
+            "api-reference/schemas/error",
+            "api-reference/schemas/listmeta",
+            "api-reference/schemas/orderbatch",
+            "api-reference/schemas/order",
+            "api-reference/schemas/orderbatchrecipient",
+            "api-reference/schemas/cart",
+            "api-reference/schemas/cartitem",
+            "api-reference/schemas/orderbatchsendstatus",
+            "api-reference/schemas/orderstatus",
+            "api-reference/schemas/shipment",
+            "api-reference/schemas/product",
+            "api-reference/schemas/brand",
+            "api-reference/schemas/productimage",
+            "api-reference/schemas/productvariant",
+            "api-reference/schemas/image",
+            "api-reference/schemas/mailingaddress",
+            "api-reference/schemas/me",
+            "api-reference/schemas/sender",
+            "api-reference/schemas/orderbatchinput",
+            "api-reference/schemas/cartinput",
+            "api-reference/schemas/cartiteminput",
+            "api-reference/schemas/orderbatchsendmethod",
+            "api-reference/schemas/recipientinput"
+          ]
+        }
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/goodygifting",
+    "linkedin": "https://www.linkedin.com/company/ongoody",
+    "instagram": "https://instagram.com/ongoody"
   }
 }
