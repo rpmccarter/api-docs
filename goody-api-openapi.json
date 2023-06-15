@@ -3,7 +3,6 @@
   "info": {
     "title": "Goody API",
     "version": "1.0.0",
-    "terms_of_service": "https://www.ongoody.com/terms",
     "contact": {
       "name": "Goody Support",
       "email": "support@ongoody.com"
@@ -661,7 +660,7 @@
                 "description": "For approved API partners only. A custom price tier for this product."
               }
             },
-            "null": true
+            "nullable": true
           }
         },
         "required": [
@@ -1051,7 +1050,9 @@
           },
           "events": {
             "type": "array",
-            "items": "string",
+            "items": {
+              "type": "string"
+            },
             "nullable": true,
             "description": "Filter the events you want to get webhooks for. Refer to the Webhooks list for the event names."
           }
