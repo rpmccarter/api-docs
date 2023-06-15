@@ -3,7 +3,6 @@
   "info": {
     "title": "Goody API",
     "version": "1.0.0",
-    "terms_of_service": "https://www.ongoody.com/terms",
     "contact": {
       "name": "Goody Support",
       "email": "support@ongoody.com"
@@ -660,8 +659,7 @@
                 "nullable": true,
                 "description": "For approved API partners only. A custom price tier for this product."
               }
-            },
-            "null": true
+            }
           }
         },
         "required": [
