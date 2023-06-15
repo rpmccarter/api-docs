@@ -1,0 +1,550 @@
+---
+Title: "Event: order_batch.created"
+sidebarTitle: "order_batch.created"
+description: "Emitted when a order batch is created in the organization."
+---
+
+**For non-scheduled order batches,** for order batches with 10 or fewer recipients, the `order_batch.created` event will contain all of the orders for each recipient. For order batches with more than 10 recipients, order creation happens asynchronously, and the `order_batch.completed` event is emitted immediately after the orders are created.
+
+**For scheduled order batches,** no order will be created when the order batch is created until the scheduled send time. The `order_batch.completed` event is emitted when the order batch scheduled time is reached, and orders are created for the order batch.
+
+## Example
+
+```json
+{
+  "event_type": "gift_batch.created",
+  "id": "ad097c47-bf12-45c9-8feb-0536a0012c09",
+  "data": {
+    "id": "bd1fd5b5-6339-4331-a404-66200143ff0f",
+    "send_status": "complete",
+    "from_name": "John",
+    "message": "Thank you!",
+    "gifts_count": 2,
+    "gifts_preview": [
+      {
+        "id": "1f6e253e-4d03-4a85-a349-0659384ac894",
+        "status": "created",
+        "recipient_first_name": "Alena",
+        "recipient_last_name": "Kenter",
+        "recipient_email": "alena@ongoody.com",
+        "individual_gift_link_shared": "https://gifts.ongoody.com/gift/Anc0HT0ZhyKAJguP75jt2Rar",
+        "card_id": "60c4a674-4f0e-4031-9eca-645d34bb6cec",
+        "message": "Thank you!",
+        "thank_you_note": null,
+        "view_count_recipient": 0,
+        "is_swapped": false,
+        "gift_batch_id": "bd1fd5b5-6339-4331-a404-66200143ff0f",
+        "cart": {
+          "id": "e0597695-5e19-4bbc-9a99-0fd540a9e68f",
+          "items": [
+            {
+              "id": "5f4e70e9-5cc7-406e-8058-c513af667511",
+              "quantity": 1,
+              "product": {
+                "id": "e69ea31a-320f-48f5-8fd7-0692df22328e",
+                "name": "Cookies",
+                "brand": {
+                  "id": "393d847d-874b-4338-b834-fe3e0cf27644",
+                  "name": "Cookie Company"
+                }
+              }
+            }
+          ]
+        },
+        "shipments": [],
+        "amounts": {
+          "amount_product": 1000,
+          "amount_shipping": 1000,
+          "amount_processing_fee": 100,
+          "amount_pre_tax_total": 2100,
+          "amount_tax": null,
+          "amount_total": null,
+          "amount_global_relay_cost": null
+        },
+        "sender": {
+          "first_name": "Test",
+          "last_name": "User",
+          "email": "15550197216@test.ongoody.com"
+        },
+        "workspace_id": "ae6e2795-8667-4d21-a1b0-fe7f642d7893",
+        "workspace_name": "Test Team",
+        "original_cart": null,
+        "original_amounts": null,
+        "reference_id": "LLRMPDGSSD7GXISGMACUKUIS"
+      },
+      {
+        "id": "981c4abd-1f0c-4287-8c35-c7cea8f6f5da",
+        "status": "created",
+        "recipient_first_name": "Michael",
+        "recipient_last_name": "Franci",
+        "recipient_email": "michael@ongoody.com",
+        "individual_gift_link_shared": "https://gifts.ongoody.com/gift/6p5k63B9ym4ksusHG6hr6xtA",
+        "card_id": "60c4a674-4f0e-4031-9eca-645d34bb6cec",
+        "message": "Thank you!",
+        "thank_you_note": null,
+        "view_count_recipient": 0,
+        "is_swapped": false,
+        "gift_batch_id": "bd1fd5b5-6339-4331-a404-66200143ff0f",
+        "cart": {
+          "id": "e0597695-5e19-4bbc-9a99-0fd540a9e68f",
+          "items": [
+            {
+              "id": "5f4e70e9-5cc7-406e-8058-c513af667511",
+              "quantity": 1,
+              "product": {
+                "id": "e69ea31a-320f-48f5-8fd7-0692df22328e",
+                "name": "Cookies",
+                "brand": {
+                  "id": "393d847d-874b-4338-b834-fe3e0cf27644",
+                  "name": "Cookie Company"
+                }
+              }
+            }
+          ]
+        },
+        "shipments": [],
+        "amounts": {
+          "amount_product": 1000,
+          "amount_shipping": 1000,
+          "amount_processing_fee": 100,
+          "amount_pre_tax_total": 2100,
+          "amount_tax": null,
+          "amount_total": null,
+          "amount_global_relay_cost": null
+        },
+        "sender": {
+          "first_name": "Test",
+          "last_name": "User",
+          "email": "15550197216@test.ongoody.com"
+        },
+        "workspace_id": "ae6e2795-8667-4d21-a1b0-fe7f642d7893",
+        "workspace_name": "Test Team",
+        "original_cart": null,
+        "original_amounts": null,
+        "reference_id": "U23DXZIHYSI4U9M8SBQ7XMVH"
+      }
+    ],
+    "recipients_count": 2,
+    "recipients_preview": [
+      {
+        "first_name": "Alena",
+        "last_name": "Kenter",
+        "email": "alena@ongoody.com"
+      },
+      {
+        "first_name": "Michael",
+        "last_name": "Franci",
+        "email": "michael@ongoody.com"
+      }
+    ],
+    "cart": {
+      "id": "e0597695-5e19-4bbc-9a99-0fd540a9e68f",
+      "items": [
+        {
+          "id": "5f4e70e9-5cc7-406e-8058-c513af667511",
+          "quantity": 1,
+          "product": {
+            "id": "e69ea31a-320f-48f5-8fd7-0692df22328e",
+            "name": "Cookies",
+            "brand": {
+              "id": "393d847d-874b-4338-b834-fe3e0cf27644",
+              "name": "Cookie Company"
+            }
+          }
+        }
+      ]
+    },
+    "is_scheduled_send": false,
+    "scheduled_send_on": null,
+    "expires_at": null,
+    "send_method": "link_multiple_custom_list",
+    "batch_name": "Alena Kenter and Michael Franci",
+    "card_id": "60c4a674-4f0e-4031-9eca-645d34bb6cec",
+    "sender": {
+      "first_name": "Test",
+      "last_name": "User",
+      "email": "15550197216@test.ongoody.com"
+    },
+    "workspace_id": "ae6e2795-8667-4d21-a1b0-fe7f642d7893",
+    "workspace_name": "Test Team",
+    "reference_id": "61Q2FSAHYYISJRZDHQXGYTBU"
+  }
+}
+```
+
+## Schema
+
+<ParamField query="event_type" type="string" required>
+  The type of event that occurred
+</ParamField>
+<ParamField query="event_id" type="string" required>
+  The unique ID for this event
+</ParamField>
+<ResponseField name="data" type="object">
+  An order batch is the primary resource created by the API. Order batches
+  contain an array of orders.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string<uuid>" required>
+    </ResponseField>
+    <ResponseField name="send_status" type="string" required>
+      The `pending` status indicates that an order batch is being prepared to be
+      sent out. If it is not scheduled, it is being sent asynchronously. If it
+      is scheduled, it will stay in `pending` state until the scheduled time is
+      reached, at which point it will be processed and moved to `complete`. When
+      it is in `pending` status, no orders are created yet. When the order
+      batch is in `complete` status, all orders are created and available. 
+      
+      Allowed values: `pending` `complete` `failed` `canceled`
+    </ResponseField>
+    <ResponseField name="from_name" type="string" required>
+      The name of the sender. This is displayed on the order and notifications.
+    </ResponseField>
+    <ResponseField name="message" type="string">
+      The message in this order batch, provided by the sender.
+    </ResponseField>
+    <ResponseField name="orders_count" type="integer" required>
+      The total number of orders in this order batch. This might be blank if the
+      order batch is scheduled for the future, or it could be fewer than the
+      recipient count if the order batch is in the process of being sent.
+    </ResponseField>
+    <ResponseField name="orders_preview" type="array[object]" required>
+      A preview of the first 10 orders in this order batch. To paginate through
+      all of the orders, use the `/order_batches/:id/orders` endpoint with
+      `?page&per_page`. If your use case never sends more than 10 orders in a
+      single batch, you can use this field instead of calling
+      `/order_batches/:id/orders`. For order batches with more than 10
+      recipients, this array will be empty while the orders are asynchronously
+      created in the background.
+      <Expandable title="properties">
+        <ResponseField name="id" type="string<uuid>" required></ResponseField>
+        <ResponseField
+          name="recipient_first_name"
+          type="string"
+          required
+        ></ResponseField>
+        <ResponseField name="recipient_last_name" type="string"></ResponseField>
+        <ResponseField name="recipient_email" type="string"></ResponseField>
+        <ResponseField name="status" type="string" required>
+          Allowed values: `created` `notified` `opened` `accepted`
+          `pending_payment` `paid` `ordered` `shipped` `delivered` `failed`
+          `canceled`
+        </ResponseField>
+        <ResponseField name="individual_gift_link" type="string" required>
+          This gift link can be sent to the recipient or shared with the sender.
+          For privacy reasons, this gift link does not display tracking
+          information. A separate link, the recipient link, is sent directly to
+          the recipient after they accept their gift, which does contain
+          tracking information.
+        </ResponseField>
+        <ResponseField name="cart" type="object" required>
+          The cart currently on this order. If the order is a gift that was
+          swapped, `cart` displays the most recent products selected (i.e.
+          post-swap).
+          <Expandable title="properties">
+            <ResponseField
+              name="id"
+              type="string<uuid>"
+              required
+            ></ResponseField>
+            <ResponseField name="items" type="array[object]">
+              <Expandable title="properties">
+                <ResponseField
+                  name="id"
+                  type="string<uuid>"
+                  required
+                ></ResponseField>
+                <ResponseField name="product" type="object" required>
+                  <Expandable title="properties">
+                    <ResponseField
+                      name="id"
+                      type="string<uuid>"
+                      required
+                    ></ResponseField>
+                    <ResponseField
+                      name="name"
+                      type="string"
+                      required
+                    ></ResponseField>
+                    <ResponseField name="brand" type="object" required>
+                      The brand that this product is from.
+                      <Expandable title="properties">
+                        <ResponseField
+                          name="id"
+                          type="string<uuid>"
+                          required
+                        ></ResponseField>
+                        <ResponseField
+                          name="name"
+                          type="string"
+                          required
+                        ></ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField
+                  name="quantity"
+                  type="integer"
+                  required
+                ></ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="shipments" type="array[object]" required>
+          A list of the shipments for the order.
+          <Expandable title="properties">
+           <ResponseField name="id" type="string<uuid>" required>
+           </ResponseField>
+           <ResponseField name="status" type="string" required>
+            Allowed values: `pending` `tracking` `shipped` `delivered` `delivered_override` `failed` `failed_unset_tracking` `failed_with_reship`
+           </ResponseField>
+           <ResponseField name="brand_name" type="string" required>
+            The name of the brand that this shipment is from
+           </ResponseField>
+           <ResponseField name="tracking_carrier" type="string">
+            The carrier for this shipment, e.g. UPS.
+           </ResponseField>
+           <ResponseField name="tracking_number" type="string">
+            Only for approved distribution partners.
+           </ResponseField>
+           <ResponseField name="shipped_at" type="string<date-time>">
+            ISO 8601
+           </ResponseField>
+           <ResponseField name="delivered_at" type="string<date-time>">
+            ISO 8601
+           </ResponseField>
+           <ResponseField name="delivery_eta" type="string<date-time>">
+            The estimated delivery time of this shipment.
+           </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="workspace_id" type="string<uuid>">
+          Organizations are sub-divided into workspaces. Orders are contained in workspaces, identified by this ID.
+        </ResponseField>
+        <ResponseField name="workspace_name" type="string">
+        </ResponseField>
+        <ResponseField name="expires_at" type="string<date-time>">
+          For gifts, the date and time the gift is set to expire.
+        </ResponseField>
+        <ResponseField name="card_id" type="string">
+          The digital greeting card on this gift.
+        </ResponseField>
+        <ResponseField name="message" type="string">
+          The message in this gift, provided by the sender.
+        </ResponseField>
+        <ResponseField name="thank_you_note" type="string">
+          A thank you note sent by the recipient.
+        </ResponseField>
+        <ResponseField name="view_count_recipient" type="integer">
+          The number of times the recipient viewed the gift.
+        </ResponseField>
+        <ResponseField name="is_swapped" type="boolean">
+          If this gift was swapped by the recipient. Swapping allows a recipient to select another product or products, which replaces the `cart`. The original products are saved to `original_cart`.
+        </ResponseField>
+        <ResponseField name="order_batch_id" type="string<uuid>">
+          On Goody for Business, all orders are attached to a order batch, which is a collection of one or more orders.
+        </ResponseField>
+        <ResponseField name="amounts" type="object" required>
+          Costs in USD cents (i.e. $1.00 = 100). If the order was swapped, `amounts` displays the most recent amounts (i.e. post-swap).
+          <Expandable title="properties">
+            <ResponseField name="amount_product" type="integer" required>
+              Total cost of the products in this order.
+            </ResponseField>
+            <ResponseField name="amount_shipping" type="integer" required>
+              Total cost of shipping for this order.
+            </ResponseField>
+            <ResponseField name="amount_processing_fee" type="integer">
+              Total cost of processing fees for this order.
+            </ResponseField>
+            <ResponseField name="amount_credit_applied" type="integer">
+              Total amount of credit applied to this order.
+            </ResponseField>
+            <ResponseField name="amount_pre_tax_total" type="integer" required>
+              Total cost of the products, shipping, and processing fees in this order.
+            </ResponseField>
+            <ResponseField name="amount_tax" type="integer">
+              Total tax for this order.
+            </ResponseField>
+            <ResponseField name="amount_total" type="integer">
+              Total cost of the products, shipping, processing fees, tax, and global shipping costs in this order.
+            </ResponseField>
+            <ResponseField name="amount_global_relay_cost" type="integer">
+              Total cost of global shipping for this order through the Global Relay service.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="event_times" type="object">
+          Only provided when calling the /orders/:id endpoint.
+          <Expandable title="properties">
+            <ResponseField name="created_at" type="string<date-time>" required>
+              ISO 8601
+            </ResponseField>
+            <ResponseField name="notified_at" type="string<date-time>">
+              When the recipient was notified of the order.
+            </ResponseField>
+            <ResponseField name="opened_at" type="string<date-time>">
+              For gifts, when the recipient opened the order.
+            </ResponseField>
+            <ResponseField name="accepted_at" type="string<date-time>">
+              For gifts, when the recipient accepted the order.
+            </ResponseField>
+            <ResponseField name="pending_payment_at" type="string<date-time>" required>
+              When the order entered pending payment status.
+            </ResponseField>
+            <ResponseField name="paid_at" type="string<date-time>">
+              When the order was paid for.
+            </ResponseField>
+            <ResponseField name="shipped_at" type="string<date-time>">
+              When the order was first shipped. If there are multiple shipments, this is when the first shipment shipped.
+            </ResponseField>
+            <ResponseField name="delivered_at" type="string<date-time>">
+              When the order was delivered. If there are multiple shipments, this is when all shipments were delivered.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="original_cart" type="object">
+          If this order is a gift that was swapped, this displays the original cart that was sent to the recipient.
+          <Expandable title="properties">
+            <ResponseField name="id" type="string<uuid>">
+            </ResponseField>
+            <ResponseField name="items" type="array[object]">
+              <Expandable title="properties">
+                <ResponseField name="id" type="string<uuid>" required>
+                </ResponseField>
+                <ResponseField name="product" type="object" required>
+                  <Expandable title="properties">
+                    <ResponseField name="id" type="string<uuid>" required>
+                    </ResponseField>
+                    <ResponseField name="name" type="string" required>
+                    </ResponseField>
+                    <ResponseField name="brand" type="object" required>
+                      The brand that this product is from.
+                      <Expandable title="properties">
+                        <ResponseField name="id" type="string<uuid>" required>
+                        </ResponseField>
+                        <ResponseField name="name" type="string" required>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name="quantity" type="integer" required>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="original_amounts" type="object">
+          If this order is a gift that was swapped, this displays the original amounts of the cart that was sent to the recipient.
+          <Expandable title="properties">
+            <ResponseField name="original_amount_product" type="integer">
+            </ResponseField>
+            <ResponseField name="original_amount_shipping" type="integer">
+            </ResponseField>
+            <ResponseField name="original_amount_credit_applied" type="integer">
+            </ResponseField>
+            <ResponseField name="original_amount_pre_tax_total" type="integer">
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="sender" type="object" required>
+          The Goody user who sent this order.
+          <Expandable title="properties">
+            <ResponseField name="first_name" type="string" required>
+            </ResponseField>
+            <ResponseField name="last_name" type="string" required>
+            </ResponseField>
+            <ResponseField name="email" type="string" required>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="reference_id" type="string" required>
+          The reference ID displayed on receipts and other locations as the ID for this order.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="recipients_count" type="integer" required>
+      The total number of recipients in this order batch.
+    </ResponseField>
+    <ResponseField name="recipients_preview" type="integer" required>
+      A preview of the first 10 recipients in this order batch. To see all of the recipients, use `/order_batches/:id/recipients`. Recipients contain the original contact information provided for each recipient when the order batch was created.
+      <Expandable title="properties">
+        <ResponseField name="first_name" type="string" required>
+        </ResponseField>
+        <ResponseField name="last_name" type="string">
+        </ResponseField>
+        <ResponseField name="email" type="string">
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="cart" type="object" required>
+      The cart that was sent for this order batch. This is the original cart that was created for this order batch. If individual orders were swapped, this still remains the same, whereas orders' `cart` would change if they were swapped.
+      <Expandable title="properties">
+        <ResponseField name="id" type="string<uuid>">
+        </ResponseField>
+        <ResponseField name="items" type="array[object]">
+        <Expandable title="properties">
+        <ResponseField name="id" type="string<uuid>" required>
+        </ResponseField>
+        <ResponseField name="product" type="object" required>
+          <Expandable title="properties">
+            <ResponseField name="id" type="string<uuid>" required>
+            </ResponseField>
+            <ResponseField name="name" type="string" required>
+            </ResponseField>
+            <ResponseField name="brand" type="object" required>
+              <Expandable title="properties">
+                <ResponseField name="id" type="string<uuid>" required>
+                </ResponseField>
+                <ResponseField name="name" type="string" required>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="quantity" type="integer" required>
+        </ResponseField>
+        </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="is_scheduled_send" type="boolean">
+      Whether this order batch was set up as a scheduled send. This stays as `true` after the scheduled send is complete. To determine if the order batch is scheduled to be sent for the future, check if `status` is `pending` and `scheduled_send_on` is in the future. When a order batch is scheduled, orders are only created on the scheduled send date.
+    </ResponseField>
+    <ResponseField name="scheduled_send_on" type="string<date-time>">
+      The date and time the order batch is scheduled to be sent. This will be `null` if the order batch is not a scheduled send. This field remains after the scheduled send completes. ISO 8601, UTC.
+    </ResponseField>
+    <ResponseField name="expires_at" type="string<date-time>">
+      The date and time the order batch is set to expire. ISO 8601, UTC.
+    </ResponseField>
+    <ResponseField name="send_method" type="string">
+      The method for sending a order batch. Currently, the only supported send method is `link_multiple_custom_list` which specifies that a link should be created for each order, but no email should automatically be sent to the recipient. Allowed value: `link_multiple_custom_list`
+    </ResponseField>
+    <ResponseField name="batch_name" type="string">
+      An internal name for the order batch, falling back to an auto-generated batch name. Not displayed to recipients.
+    </ResponseField>
+    <ResponseField name="card_id" type="string<uuid>">
+      The digital greeting card on this order batch.
+    </ResponseField>
+    <ResponseField name="sender" type="object" required>
+      The sender of the order batch.
+      <Expandable title="properties">
+        <ResponseField name="first_name" type="string" required>
+        </ResponseField>
+        <ResponseField name="last_name" type="string" required>
+        </ResponseField>
+        <ResponseField name="email" type="string" required>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="workplace_id" type="string<uuid>">
+      Organizations are sub-divided into workspaces. Order batches are contained in workspaces, identified by this ID.
+    </ResponseField>
+    <ResponseField name="workplace_name" type="string">
+    </ResponseField>
+    <ResponseField name="reference_id" type="string" required>
+      The reference ID displayed on receipts and other locations as the ID for this order batch.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
