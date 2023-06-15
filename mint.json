@@ -11,6 +11,7 @@
       "method": "bearer"
     }
   },
+  "openapi": "goody-api-openapi.json",
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9159D6",
@@ -162,5 +163,10 @@
     "twitter": "https://twitter.com/goodygifting",
     "linkedin": "https://www.linkedin.com/company/ongoody",
     "instagram": "https://instagram.com/ongoody"
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-7CST37MNCX"
+    }
   }
 }
