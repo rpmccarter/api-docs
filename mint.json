@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Goody",
   "logo": {
-    "light": "/logo.png",
-    "dark": "/logo.png"
+    "light": "/logo.svg",
+    "dark": "/logo.svg"
   },
   "api": {
     "baseUrl": "https://api.ongoody.com",
@@ -21,14 +21,14 @@
       "to": "#7f67ff"
     }
   },
-  "topbarCtaButton": {
-    "name": "Send a Gift",
-    "url": "https://www.ongoody.com/send"
-  },
   "topbarLinks": [
     {
-      "name": "Sign in",
-      "url": "https://www.ongoody.com/"
+      "name": "Commerce API Keys",
+      "url": "https://www.ongoody.com/plus/organization/api/commerce"
+    },
+    {
+      "name": "Automation API Keys",
+      "url": "https://www.ongoody.com/plus/organization/api/automation"
     }
   ],
   "anchors": [
@@ -36,16 +36,6 @@
       "name": "API Reference",
       "icon": "square-terminal",
       "url": "api-reference"
-    },
-    {
-      "name": "Goody for Business",
-      "icon": "briefcase",
-      "url": "https://www.ongoody.com/business"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://www.ongoody.com/blog"
     }
   ],
   "navigation": [
@@ -87,14 +77,14 @@
         {
           "group": "Webhooks",
           "pages": [
-            "webhooks/webhooks-types/order_batch.created",
-            "webhooks/webhooks-types/order_batch.completed",
-            "webhooks/webhooks-types/order.created",
-            "webhooks/webhooks-types/order.gift_opened",
-            "webhooks/webhooks-types/order.gift_accepted",
-            "webhooks/webhooks-types/order.thank_you_note_added",
-            "webhooks/webhooks-types/order.shipped",
-            "webhooks/webhooks-types/order.delivered"
+            "webhooks/events/order_batch.created",
+            "webhooks/events/order_batch.completed",
+            "webhooks/events/order.created",
+            "webhooks/events/order.gift_opened",
+            "webhooks/events/order.gift_accepted",
+            "webhooks/events/order.thank_you_note_added",
+            "webhooks/events/order.shipped",
+            "webhooks/events/order.delivered"
           ]
         }
       ]
